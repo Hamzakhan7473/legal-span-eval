@@ -24,6 +24,7 @@ FORBIDDEN_PATTERNS: dict[str, re.Pattern[str]] = {
     "aws_response_metadata": re.compile(r'"(?:ResponseMetadata|RequestId|x-amzn-requestid)"\s*:'),
     "google_response_id": re.compile(r'"responseId"\s*:'),
     "openai_completion_id": re.compile(r'"id"\s*:\s*"chatcmpl-'),
+    "bedrock_tool_use_id": re.compile(r'"toolUseId"\s*:'),
     "openai_request_id": re.compile(r'"(?:x-request-id|openai-organization|openai-project)"\s*:', re.IGNORECASE),
 }
 

@@ -1,0 +1,34 @@
+# Token prices in USD per 1,000,000 tokens, standard (non-batch) tier.
+# Prices are as of the retrieval date below, NOT the date of any run. Re-check before
+# quoting costs; estimated costs in logs are only as good as this table.
+#
+# output_usd_per_mtok applies to all billed output tokens, including thinking/reasoning
+# tokens where the provider reports them separately.
+
+retrieved: 2026-10-20
+
+models:
+  gemini-2.5-flash:
+    provider: google
+    input_usd_per_mtok: 0.30   # text/image/video input; audio is priced differently
+    output_usd_per_mtok: 2.50  # "including thinking tokens"
+    # source: https://ai.google.dev/gemini-api/docs/pricing  (Gemini 2.5 Flash, Paid Tier, Standard)
+    verified_for_provider: true
+
+  gpt-5.4-mini:
+    provider: openai
+    input_usd_per_mtok: 0.75
+    output_usd_per_mtok: 4.50
+    # source: https://platform.openai.com/docs/pricing  (Standard pricing data, gpt-5.4-mini)
+    verified_for_provider: true
+
+  us.anthropic.claude-sonnet-4-6:
+    provider: bedrock
+    input_usd_per_mtok: 3.00
+    output_usd_per_mtok: 15.00
+    # source: https://docs.claude.com/en/docs/about-claude/pricing  (Claude Sonnet 4.6, Anthropic API)
+    # NOT verified for Bedrock: https://aws.amazon.com/bedrock/pricing/ renders its model tables
+    # client-side and could not be read programmatically. Anthropic's page states Bedrock has
+    # independent regional pricing and that regional/multi-region endpoints can carry a 10%
+    # premium over global endpoints. Confirm the us.* inference-profile price in the AWS console.
+    verified_for_provider: false

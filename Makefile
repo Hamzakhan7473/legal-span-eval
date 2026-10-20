@@ -23,8 +23,8 @@ verify-data: ## Check the eval set against its SHA-256 manifest
 manifest: ## Regenerate data/eval_set/MANIFEST.json
 	$(PY) scripts/eval_set_manifest.py write
 
-smoke: ## One live call per provider (paid; Phase 1)
-	@echo "not implemented yet (Phase 1)" && exit 1
+smoke: ## Plan + cost estimate for one call per provider; add ARGS=--yes to make the calls
+	$(PY) scripts/smoke.py $(ARGS)
 
 e1 e2 e3 e4 e5 e6: ## Experiments E1-E6 (Phase 2)
 	@echo "not implemented yet (Phase 2)" && exit 1

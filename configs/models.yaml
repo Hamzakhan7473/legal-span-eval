@@ -1,28 +1,41 @@
 # Model IDs and decoding parameters, copied from the pinned configuration recorded
 # in the manifest of the original run 20260625T183510Z_45633959. The names
 # (google, openai, bedrock_claude) are kept so new runs line up with that run.
+#
+# structured_output reproduces the original harness's request shape per provider:
+#   json_object  OpenAI response_format {"type": "json_object"}
+#   json_mime    Google generationConfig.responseMimeType "application/json"
+#   tool         Bedrock Converse with a forced tool call (falls back to non-forced
+#                if the model rejects toolChoice, as the original harness did)
 
 defaults:
   temperature: 0.0
   max_tokens: 4096
+  timeout_s: 120
+  max_attempts: 6          # per provider call, with exponential backoff on 429/5xx/timeouts
+  requests_per_minute: 60  # per provider
 
 models:
   google:
     provider: google
     model_id: gemini-2.5-flash
     env_key: GOOGLE_API_KEY
+    structured_output: json_mime
 
   openai:
     provider: openai
     model_id: gpt-5.4-mini
     env_key: OPENAI_API_KEY
+    structured_output: json_object
 
   bedrock_claude:
     provider: bedrock
     model_id: us.anthropic.claude-sonnet-4-6
     region: us-east-1
+    structured_output: tool
 
 judge:
   provider: bedrock
   model_id: us.anthropic.claude-sonnet-4-6
   region: us-east-1
+  structured_output: text

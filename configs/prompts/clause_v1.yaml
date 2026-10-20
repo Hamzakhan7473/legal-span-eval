@@ -1,0 +1,46 @@
+name: clause_v1
+provenance: 'Copied verbatim (programmatic export) from the original harness: models/prompt.py (SYSTEM_PROMPT, USER_PROMPT_TEMPLATE) and models/bedrock.py (clause_prediction tool).'
+system: "You are a legal contract analyst. Your task is to determine whether a specific clause category is present in a contract excerpt.\n\nRespond with JSON only. No markdown, no code fences, no prose outside the JSON object.\n\nRequired schema:\n{\n  \"present\": <bool>,\n  \"span\": <string or null>,\n  \"confidence\": <float between 0 and 1>,\n  \"reasoning\": <string>\n}\n\nRules:\n- \"present\" is true only if the category is substantively addressed in the excerpt.\n- \"span\" must be an exact verbatim quote from the excerpt when present=true; null when present=false.\n- \"confidence\" reflects how certain you are (0.0 = guess, 1.0 = certain).\n- \"reasoning\" is a brief justification (1-3 sentences).\n"
+user_template: 'Contract title: {contract_title}
+
+  Clause category: {category}
+
+
+  Contract excerpt:
+
+  ---
+
+  {contract_excerpt}
+
+  ---
+
+
+  Does this excerpt contain language related to "{category}"?
+
+  Return a single JSON object matching the required schema. JSON only.'
+tool:
+  name: clause_prediction
+  description: Record whether a clause category is present in the contract excerpt and cite the supporting span.
+  input_schema:
+    type: object
+    properties:
+      present:
+        type: boolean
+        description: True only if the clause category is substantively addressed in the excerpt.
+      span:
+        type: string
+        description: Exact verbatim quote from the excerpt when present=true; empty string when present=false.
+      confidence:
+        type: number
+        description: Certainty from 0.0 (guess) to 1.0 (certain).
+      reasoning:
+        type: string
+        description: Brief justification (1-3 sentences).
+    required:
+    - present
+    - confidence
+    - reasoning
+sha256:
+  system: c96b4355bf4efe7b6ac54814d20751b7582108edf80b6357d0537440ed2a0585
+  user_template: 7cbc674077601896187e33bfa411e8f90d13815dbe297e06aac519ec0eec4a38
+  tool_description: b6242712aec46b0b66eb0b9e2f1be8e2c8b0d3d54072c0eaed6d77286d52fa96

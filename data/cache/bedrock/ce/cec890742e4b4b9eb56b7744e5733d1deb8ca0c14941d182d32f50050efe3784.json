@@ -1,0 +1,106 @@
+{
+ "key": "cec890742e4b4b9eb56b7744e5733d1deb8ca0c14941d182d32f50050efe3784",
+ "meta": {
+  "latency_ms": 3311.77,
+  "provider_attempts": 1
+ },
+ "model_id": "us.anthropic.claude-sonnet-4-6",
+ "provider": "bedrock",
+ "request": {
+  "inferenceConfig": {
+   "maxTokens": 4096,
+   "temperature": 0.0
+  },
+  "messages": [
+   {
+    "content": [
+     {
+      "text": "Contract title: SigaTechnologiesInc_20190603_8-K_EX-10.1_11695818_EX-10.1_Promotion Agreement\nClause category: Affiliate License-Licensee\n\nContract excerpt:\n---\n forth in Section 9.2. \"SIGA Intellectual Property\" means the SIGA Know-How, SIGA Trademarks, SIGA Patents and SIGA Inventions. \"SIGA Know-How\" means all Know-How that (a) is necessary or useful for the Development, Manufacture or Commercialization of the Product in the Field in the Territory and (b) (i) is Controlled by SIGA or its Affiliates as of the Effective Date or (ii) is or becomes Controlled by SIGA or its Affiliates during the Term. \"SIGA Patent\" means any Patent that (a) claims, generically or specifically, the Product, or the Manufacture or use of the Product in the Field (including its intermediates and relevant compounds) and (b)(i) is Controlled by SIGA or its Affiliates as of the Effective Date, which such Patents are set forth in Schedule 1 hereto, (ii) is Controlled by SIGA or its Affiliates during the Term and claims priority to the Patents Controlled by SIGA or its Affiliates as of the Effective Date, or (iii) is or becomes Controlled by SIGA or its Affiliates during the Term. \"SIGA Trademark\" means any Trademark that (a) is necessary for the Development, Manufacture or Commercialization of a Product in the Field in the Territory and (b) (i) is Controlled by SIGA or its Affiliates as of the Effective Date (which such Trademarks are set forth in Schedule 2 hereto) or (ii) is or becomes Controlled by SIGA or its Affiliates during the Term.\n\n9\n\nSource: SIGA TECHNOLOGIES INC, 8-K, 6/3/2019\n\n\n\n\n\n\"SIGA's Auditor\" has the meaning set forth in Section 6.5. \"South Korea\" means South Korea, including all of its territories and possessions. \"Special Access Approval\" has the meaning set forth in Section 4.4(b). \"Supply Limitation\" has the meaning set forth in Section 5.4. \"Supply Terms\" means [***]. \"Term\" has the meaning set forth in Section 11.1. \"Territory\" means all countries and territories in the world other than (a) the U.S., (b) South Korea, (c) any Restricted Market, and (d) any Discontinued Country and, in the case of (a)-(c), each of their respective territories and possessions. \"Third Party\" means any Person other than SIGA or MMT or an Affiliate of either of them. \"Tier 1 Countries\" mean [***]. \"Tier 2 Countries\" mean [***]. \"Tier 3 Countries\" mean [***]. \"Tier Period\" has the meaning set forth in Section 4.2. \"Trademark\" means any trademark, service mark, trade name, brand name, sub-brand name, trade dress, product configuration, program name, product name, delivery form name, certification mark, collective mark, logo, tagline, slogan, design or business symbol, that functions as an identifier of source or origin, whether or not registered and all statutory and common law rights therein and all registrations and applications therefor, together with all goodwill associated with, or symbolized by, any of the foregoing. \"U.S.\" means the United States of America, including all of its territories and possessions. \"VAT\" has the meaning set forth in Section 6.8(c). \"Yearly Collected Revenue\" means Net Product Sales Amount that is collected during the applicable Calendar Year.\n\n10\n\nSource: SIGA TECHNOLOGIES INC, 8-K, 6/3/2019\n\n\n\n\n\nARTICLE 2\n\nGRANT OF RIGHTS 2.1 Grant of Rights to MMT. (a) Grant to MMT. Subject to the terms and conditions of this Agreement, SIGA hereby grants to MMT an exclusive right and license, with the right to grant sublicenses as permitted under Section 2.1(b), under the SIGA Intellectual Property solely to Promote the Product in the Field in the Territory. The license granted by SIGA to MMT under this Section 2.1(a) will be exclusive even as to SIGA with respect to rights to Promote the Product in the Field in the Territory, except as set forth in Section 2.4 below. (b) Sublicense Rights. Except for the subcontractors appointed by MMT as of the Effective Date as listed on Exhibit A attached hereto, MMT may not grant sublicenses of the rights and licenses granted to it in Section 2.1(a) to any Affiliate (including Pfizer or any Affiliate of Pfizer) or Third Party without the prior written approval of SIGA (such approval not to be unreasonably withheld). Each such subcontractor listed on Exhibit A attached hereto and any Affiliate or Third Party approved by SIGA as an MMT sublicensee pursuant to this Section 2.1(b) shall be deemed to be a \"Permitted Sublicensee\" for purposes of this Agreement. (c) Potential New Field. From time to time, MMT may request to expand the Field in a particular country in the Territory because it believes that there is an opportunity to Promote the Product in such new field (a \"Potential New Field\"). MMT shall make such request to SIGA in writing. SIGA will determine whether to approve such Potential New Field, based upon available information regarding the regulatory environment in such country for such Potential New Field, and whether SIGA will need to seek Regulatory Approval and Pricing Approval and Reimbursement Approval. The Parties shall discuss the Potential New Field in good faith and upon the mutual written agreement of the Parties to proceed with a Potential New Field in such country, such Potential New Field shall be deemed hereunder to be an \"Expanded Field\" for purposes of that country only in the Territory. 2.2 Negative Covenants. (a) MMT will not, and will not permit any of its Affiliates or sublicensees to, use or practice any SIGA Intellectual Property outside the scope of the licenses granted to it under Section 2.1. (b) SIGA will not, and will not permit any of its Affiliates or licensees to, Promote the Product in the Field in the Territory, except as set forth in Section 2.4. 2.3 Non-Compete Covenant. During the Term, MMT shall not Commercialize in any manner any Competing Product in the Field in any country in the Territory; provided, however, the Parties hereby acknowledge that the restrictions set forth in this Section 2.3 shall not apply to any Affiliates of MMT (including Pfizer). Furthermore, [***].\n\n11\n\nSource: SIGA TECHNOLOGIES INC, 8-K, 6/3/2019\n\n\n\n\n\n2.4 Retained Rights. Notwithstanding anything herein to the contrary, SIGA retains the right on behalf of itself and its Affiliates, licensees or any Third Parties to Develop, Manufacture, supply, distribute and otherwise Commercialize the Product in Field the Territory, except that SIGA may not Promote or Sell or Offer to Sell the Product in the Field in the Territory to any Third Party; provided that SIGA may, at its sole cost and discretion engage in promotional activities regarding (but not enter into any Customer Contracts in respect of) the Product in support of MMT's efforts to Promote or Sell and Offer to Sell the Product. 2.5 No Implied Licenses. Except as explicitly set forth in this Agreement, neither Party will be deemed by estoppel or implication to have granted the other Party any license or other right to any intellectual property of such Party. For clarity, MMT acknowledges and agrees that SIGA has not granted any license to MMT hereunder to Develop or Manufacture the Product, and MMT does not have any right to Commercialize the Product, other than the license granted by SIGA to MMT to Promote the Product in the Field in the Territory as set forth in Section 2.1(a). 2.6 [***]. (a) [***]. ARTICLE 3\n\nGOVERNANCE 3.1 Joint Steering Committee. (a) Formation and Role. Within thirty (30) days after the Effective Date, the Parties will establish a joint steering committee (the \"JSC\") to govern the activities of the Parties with respect to the Promotion and Commercialization of the Product in the Field in the Territory pursuant to this Agreement. The role of the JSC is: [***] (b) Members. [***]. (c) Meetings. [***]. (d) Alliance Managers. [***]. (e) Decision Making. [***]. 3.2 Good Faith. In conducting themselves on any committees, each representative of either Party, including the chairperson, will consider diligently, reasonably and in good faith all input received from the other Party, and will use commercially reasonably efforts to reach consensus on all matters before them. In exercising any decisio\n---\n\nDoes this excerpt contain language related to \"Affiliate License-Licensee\"?\nReturn a single JSON object matching the required schema. JSON only."
+     }
+    ],
+    "role": "user"
+   }
+  ],
+  "modelId": "us.anthropic.claude-sonnet-4-6",
+  "system": [
+   {
+    "text": "You are a legal contract analyst. Your task is to determine whether a specific clause category is present in a contract excerpt.\n\nRespond with JSON only. No markdown, no code fences, no prose outside the JSON object.\n\nRequired schema:\n{\n  \"present\": <bool>,\n  \"span\": <string or null>,\n  \"confidence\": <float between 0 and 1>,\n  \"reasoning\": <string>\n}\n\nRules:\n- \"present\" is true only if the category is substantively addressed in the excerpt.\n- \"span\" must be an exact verbatim quote from the excerpt when present=true; null when present=false.\n- \"confidence\" reflects how certain you are (0.0 = guess, 1.0 = certain).\n- \"reasoning\" is a brief justification (1-3 sentences).\n"
+   }
+  ],
+  "toolConfig": {
+   "toolChoice": {
+    "any": {}
+   },
+   "tools": [
+    {
+     "toolSpec": {
+      "description": "Record whether a clause category is present in the contract excerpt and cite the supporting span.",
+      "inputSchema": {
+       "json": {
+        "properties": {
+         "confidence": {
+          "description": "Certainty from 0.0 (guess) to 1.0 (certain).",
+          "type": "number"
+         },
+         "present": {
+          "description": "True only if the clause category is substantively addressed in the excerpt.",
+          "type": "boolean"
+         },
+         "reasoning": {
+          "description": "Brief justification (1-3 sentences).",
+          "type": "string"
+         },
+         "span": {
+          "description": "Exact verbatim quote from the excerpt when present=true; empty string when present=false.",
+          "type": "string"
+         }
+        },
+        "required": [
+         "present",
+         "confidence",
+         "reasoning"
+        ],
+        "type": "object"
+       }
+      },
+      "name": "clause_prediction"
+     }
+    }
+   ]
+  }
+ },
+ "response": {
+  "body": {
+   "metrics": {
+    "latencyMs": 3086
+   },
+   "output": {
+    "message": {
+     "content": [
+      {
+       "toolUse": {
+        "input": {
+         "confidence": 0.92,
+         "present": true,
+         "reasoning": "The excerpt explicitly addresses licensing rights granted to MMT, including provisions about sublicensing to Affiliates. Section 2.1(b) specifically states that MMT may not grant sublicenses to any Affiliate (including Pfizer or any Affiliate of Pfizer) without prior written approval of SIGA, and defines \"Permitted Sublicensee\" to include approved Affiliates. Additionally, the SIGA Intellectual Property definitions reference rights \"Controlled by SIGA or its Affiliates,\" establishing the affiliate dimension of the license.",
+         "span": "MMT may not grant sublicenses of the rights and licenses granted to it in Section 2.1(a) to any Affiliate (including Pfizer or any Affiliate of Pfizer) or Third Party without the prior written approval of SIGA (such approval not to be unreasonably withheld). Each such subcontractor listed on Exhibit A attached hereto and any Affiliate or Third Party approved by SIGA as an MMT sublicensee pursuant to this Section 2.1(b) shall be deemed to be a \"Permitted Sublicensee\" for purposes of this Agreement."
+        },
+        "name": "clause_prediction",
+        "type": "tool_use"
+       }
+      }
+     ],
+     "role": "assistant"
+    }
+   },
+   "stopReason": "tool_use",
+   "usage": {
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0,
+    "inputTokens": 3137,
+    "outputTokens": 340,
+    "totalTokens": 3477
+   }
+  }
+ }
+}
