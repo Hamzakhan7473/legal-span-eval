@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper below and CUAD."
+title: "Overlap Metrics Certify Legally Material Errors: Evaluating Frontier LLMs on Legal Clause Extraction"
+authors:
+  - family-names: "Khan"
+    given-names: "Abu Hamza"
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/Hamzakhan7473/legal-span-eval"
+identifiers:
+  - type: other
+    value: "arXiv:TBD"
+    description: "arXiv ID, added after submission"
+references:
+  - type: article
+    title: "CUAD: An Expert-Annotated NLP Dataset for Legal Contract Review"
+    authors:
+      - family-names: "Hendrycks"
+        given-names: "Dan"
+      - family-names: "Burns"
+        given-names: "Collin"
+      - family-names: "Chen"
+        given-names: "Anya"
+      - family-names: "Ball"
+        given-names: "Spencer"
+    identifiers:
+      - type: other
+        value: "arXiv:2103.06268"
+    year: 2021

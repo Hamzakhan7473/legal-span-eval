@@ -1,0 +1,35 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# LaTeX build artifacts (the arXiv package is built into paper/arxiv/ on demand)
+paper/**/*.aux
+paper/**/*.log
+paper/**/*.out
+paper/**/*.blg
+paper/**/*.fls
+paper/**/*.fdb_latexmk
+paper/**/*.synctex.gz
+paper/**/*.toc
+paper/arxiv/build/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# data/runs/, data/cache/, and data/derived/ are committed on purpose:
+# `make reproduce` regenerates every number from them without API calls.

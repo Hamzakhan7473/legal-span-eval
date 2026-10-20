@@ -1,0 +1,28 @@
+# Model IDs and decoding parameters, copied from the pinned configuration recorded
+# in the manifest of the original run 20260625T183510Z_45633959. The names
+# (google, openai, bedrock_claude) are kept so new runs line up with that run.
+
+defaults:
+  temperature: 0.0
+  max_tokens: 4096
+
+models:
+  google:
+    provider: google
+    model_id: gemini-2.5-flash
+    env_key: GOOGLE_API_KEY
+
+  openai:
+    provider: openai
+    model_id: gpt-5.4-mini
+    env_key: OPENAI_API_KEY
+
+  bedrock_claude:
+    provider: bedrock
+    model_id: us.anthropic.claude-sonnet-4-6
+    region: us-east-1
+
+judge:
+  provider: bedrock
+  model_id: us.anthropic.claude-sonnet-4-6
+  region: us-east-1

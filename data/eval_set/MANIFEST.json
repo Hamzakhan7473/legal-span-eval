@@ -1,0 +1,61 @@
+{
+  "files": {
+    "eval_set.jsonl": {
+      "sha256": "187a9b90cea400493402e2c54292b8e503a05481cb3aabd68870327ae2c6d2b0",
+      "n_lines": 150
+    },
+    "frozen_eval_ids.txt": {
+      "sha256": "beeafcf28109c759a0766aad9a451311f4eab0033308c1120d9b697f01fc6c32",
+      "n_lines": 150
+    }
+  },
+  "n_examples": 150,
+  "n_present": 72,
+  "n_absent": 78,
+  "categories": {
+    "Affiliate License-Licensee": {
+      "present": 12,
+      "absent": 13
+    },
+    "Affiliate License-Licensor": {
+      "present": 12,
+      "absent": 13
+    },
+    "Agreement Date": {
+      "present": 12,
+      "absent": 13
+    },
+    "Anti-Assignment": {
+      "present": 12,
+      "absent": 13
+    },
+    "Audit Rights": {
+      "present": 12,
+      "absent": 13
+    },
+    "Cap On Liability": {
+      "present": 12,
+      "absent": 13
+    }
+  },
+  "n_unique_contract_titles": 139,
+  "source": {
+    "dataset": "CUAD v1",
+    "publisher": "The Atticus Project",
+    "url": "https://huggingface.co/datasets/theatticusproject/cuad",
+    "file": "CUAD_v1/CUAD_v1.json",
+    "license": "CC BY 4.0",
+    "paper": "arXiv:2103.06268"
+  },
+  "construction": {
+    "n_categories": 6,
+    "n_per_category": 25,
+    "n_present_per_category": 12,
+    "n_absent_per_category": 13,
+    "category_selection": "alphabetical: the first 6 categories (sorted by name) with at least 13 present and 13 absent items",
+    "sampling": "random.Random(seed).sample, without replacement, per category and label",
+    "seed": 42,
+    "max_excerpt_chars": 8000,
+    "excerpt_rule": "absent items use the first 8000 characters of the contract; present items use an 8000-character window centered on the gold spans, uncapped when the gold spans themselves span 8000 or more characters"
+  }
+}
