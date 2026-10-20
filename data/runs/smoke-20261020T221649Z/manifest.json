@@ -1,0 +1,33 @@
+{
+  "run_id": "smoke-20261020T221649Z",
+  "created_utc": "2026-10-20T22:16:49.179704+00:00",
+  "git": {
+    "sha": "1d248a26b8836823b83ad10e0da5c3a2dfb5e6b8",
+    "dirty": false
+  },
+  "configs": {
+    "configs/models.yaml": "4e0fb964832454d0277bd3fb3687b135561777d1da72ec3493b7e357f80c9520",
+    "configs/pricing.yaml": "7aec47cb03fc74030b5fe04ca37bdbd744b2f96502bab19cee844830cca03059",
+    "configs/prompts/clause_v1.yaml": "16b8de031acd0686b48b8fc4c7eb06099cf14e5aed695fce8608dfac23a14ad8"
+  },
+  "eval_set": {
+    "path": "data/eval_set/eval_set.jsonl",
+    "sha256": "187a9b90cea400493402e2c54292b8e503a05481cb3aabd68870327ae2c6d2b0"
+  },
+  "python": "3.11.14",
+  "platform": "macOS-26.5.1",
+  "packages": {
+    "legal-span-eval": "0.1.0",
+    "boto3": "1.43.36",
+    "botocore": "1.43.36",
+    "httpx": "0.28.1",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "pydantic": "2.13.4",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.17.1",
+    "matplotlib": "3.11.0"
+  },
+  "purpose": "smoke test",
+  "example_id": "cuad-00011"
+}

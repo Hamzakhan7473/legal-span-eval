@@ -56,9 +56,33 @@ def load_model_configs(path: Path = DEFAULT_MODELS_PATH) -> dict[str, ModelConfi
             ),
             env_key=entry.get("env_key"),
             region=entry.get("region"),
+            thinking=entry.get("thinking"),
         )
         for name, entry in entries.items()
     }
+
+
+def models_manifest(models: dict[str, ModelConfig], names: list[str] | None = None) -> dict[str, Any]:
+    """Model settings recorded in a run manifest."""
+    selected = names or list(models)
+    out: dict[str, Any] = {}
+    for name in selected:
+        cfg = models[name]
+        entry: dict[str, Any] = {
+            "provider": cfg.provider,
+            "model_id": cfg.model_id,
+            "structured_output": cfg.structured_output,
+            "max_tokens": cfg.max_tokens,
+        }
+        if cfg.provider == "google":
+            entry["thinking"] = cfg.thinking or "api_default"
+        if cfg.provider == "bedrock":
+            entry["inference_profile_id"] = cfg.model_id
+            entry["inference_profile_scope"] = cfg.inference_profile_scope
+            entry["region"] = cfg.region
+            entry["model_version_returned_by_api"] = False
+        out[name] = entry
+    return out
 
 
 class Router:

@@ -17,7 +17,9 @@ from datetime import UTC, datetime
 from lse.data.eval_set import read_eval_set
 from lse.router import ResponseCache, Router, RunLog
 from lse.router.cache import cache_key
+from lse.router.router import models_manifest
 from lse.run.clause_task import build_messages, clause_schema
+from lse.run.guard import DirtyTreeError, ensure_clean_tree
 
 MODELS = ("google", "openai", "bedrock_claude")
 CHARS_PER_TOKEN_ESTIMATE = 4  # rough; tokenizers differ by provider
@@ -27,6 +29,11 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--example", default="cuad-00011")
     parser.add_argument("--yes", action="store_true", help="actually make the paid calls")
+    parser.add_argument(
+        "--allow-dirty",
+        action="store_true",
+        help="smoke tests only: run from an uncommitted tree (recorded in the manifest)",
+    )
     args = parser.parse_args()
 
     example = next(e for e in read_eval_set() if e["id"] == args.example)
@@ -64,8 +71,24 @@ def main() -> int:
         print("\nNo calls made. Re-run with --yes to make them.")
         return 0
 
+    try:
+        was_dirty = ensure_clean_tree(allow_dirty=args.allow_dirty)
+    except DirtyTreeError as exc:
+        print(f"\n{exc}\n(Smoke tests may pass --allow-dirty.)")
+        return 1
+
     run_id = "smoke-" + datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
-    router = Router(run_log=RunLog(run_id, extra={"purpose": "smoke test", "example_id": example["id"]}))
+    run_log = RunLog(
+        run_id,
+        extra={
+            "purpose": "smoke test",
+            "example_id": example["id"],
+            "allow_dirty": args.allow_dirty,
+            "started_dirty": was_dirty,
+            "models": models_manifest(router.models, list(MODELS)),
+        },
+    )
+    router = Router(run_log=run_log)
     print(f"\nrun_id: {run_id}")
     for name in MODELS:
         response = router.complete(name, messages, schema, metadata={"example_id": example["id"]})
@@ -82,6 +105,7 @@ def main() -> int:
             p = response.parsed
             print(f"  present={p['present']} confidence={p['confidence']}")
             print(f"  span: {p['span']!r}")
+    run_log.finalize()
     return 0
 
 

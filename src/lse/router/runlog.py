@@ -123,3 +123,20 @@ class RunLog:
         line = json.dumps({"run_id": self.run_id, **row}, sort_keys=True, ensure_ascii=False)
         with self._lock, self.calls_path.open("a", encoding="utf-8") as handle:
             handle.write(line + "\n")
+
+    def finalize(self) -> dict[str, Any]:
+        """Record completion time and each model's access window (first/last call, UTC)."""
+        windows: dict[str, dict[str, Any]] = {}
+        if self.calls_path.exists():
+            for line in self.calls_path.read_text(encoding="utf-8").splitlines():
+                row = json.loads(line)
+                stamp = row["logged_utc"]
+                window = windows.setdefault(row["model"], {"first_call_utc": stamp, "last_call_utc": stamp, "n_calls": 0})
+                window["first_call_utc"] = min(window["first_call_utc"], stamp)
+                window["last_call_utc"] = max(window["last_call_utc"], stamp)
+                window["n_calls"] += 1
+        manifest = json.loads(self.manifest_path.read_text(encoding="utf-8"))
+        manifest["completed_utc"] = datetime.now(UTC).isoformat()
+        manifest["access_windows"] = windows
+        self.manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+        return manifest

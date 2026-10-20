@@ -39,6 +39,16 @@ class ModelConfig:
     requests_per_minute: float
     env_key: str | None = None
     region: str | None = None
+    # Google only: "api_default" sends no thinkingConfig; an int sets thinkingBudget.
+    thinking: str | int | None = None
+
+    @property
+    def inference_profile_scope(self) -> str | None:
+        """Geographic scope of a Bedrock cross-region inference profile ID, e.g. 'us'."""
+        if self.provider != "bedrock":
+            return None
+        prefix = self.model_id.split(".", 1)[0]
+        return prefix if prefix in {"us", "eu", "apac", "global"} else None
 
 
 @dataclass(frozen=True)
@@ -137,6 +147,10 @@ class GoogleProvider:
             generation["responseMimeType"] = "application/json"
         if seed is not None:
             generation["seed"] = seed
+        if isinstance(cfg.thinking, int) and not isinstance(cfg.thinking, bool):
+            generation["thinkingConfig"] = {"thinkingBudget": cfg.thinking}
+        elif cfg.thinking not in (None, "api_default"):
+            raise ValueError(f"unsupported thinking setting {cfg.thinking!r} for {cfg.name}")
         request: dict[str, Any] = {
             "contents": [
                 {"role": "model" if m.role == "assistant" else "user", "parts": [{"text": m.content}]}
